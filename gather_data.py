@@ -9,7 +9,7 @@ import os
 
 cwd = os.getcwd() # current working directory
 
-# image_type will be rock, paper, scissors, or none 
+# image_type will be cow, bird, snake, or none 
 def get_data(sample_count, image_type):
   capture = cv2.VideoCapture(0)
   start = False
@@ -27,12 +27,13 @@ def get_data(sample_count, image_type):
     # Create the frame of what that we will be looking in
     cv2.rectangle(frame, (25, 25), (300, 300), (255, 255, 255), 2)
     # We will have keys to determine if we started taking pictures.
+    # Press a to start taking pictures, press q to stop
     key = cv2.waitKey(10)
     if key == ord('a'):
       start = not start
     if key == ord('q'):
       break
-    # If we have started collecting data, we will start taking pictures in the defined frame and 
+    # If we have started collecting data, we will start taking pictures in the defined frame and saving them to the filepath
     if start:
         data_image = frame[25:300, 25:300]
         # Create a path to the drive
