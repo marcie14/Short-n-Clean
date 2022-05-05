@@ -21,3 +21,13 @@ Files
 7) Rock_Paper_Scissors folder
     This folder contains files ready to play a game of rock paper scissors
     Note: the model for these files is not as good as the model set up for Cow Snake Bird
+
+
+Instructions:
+1) Clone Repository
+2) Either download our model (BCS.h5) or:
+    - Create your own using  gather_data.py
+    - Run produced images through edge_detection.py
+    - Train your model with EdgeDetectionModel Google Colab
+3) Test model in BCSRecognize.py to test
+4) Use .h5 file in main.py
