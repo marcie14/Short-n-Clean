@@ -51,12 +51,12 @@ photo_of_move = 0
 
 # converts choice (string) to number (int) - used by results(user, comp) function
 def choice_to_number(choice):
-    rps = {'cow':0, 'snake':1, 'bird':2}
+    rps = {'cow':0, 'snake':1, 'bird':2}#
     return rps[choice]
 
 # converts number (int) to choice (string) - used by medium mode comp_hand call
 def number_to_choice(number):
-    rps = {0:'cow', 1:'snake', 2:'bird'}
+    rps = {0:'cow', 1:'snake', 2:'bird'}###################################################################################
     return rps[number]
 
 # function to decipher player move and call cow/snake/bird functions
@@ -171,14 +171,11 @@ def result(user, comp):
     comp = choice_to_number(comp)
 
     if(user==comp):
-        print('tie')
         results_statement = 'User: ' + user_hand + '\nComp: ' + comp_hand + '\n\nTie\n\nUser Score: ' + str(user_score) + '\nComp Score: ' + str(comp_score)
     elif((user-comp)%3==1):
-        print('user wins')
         user_score += 1
         results_statement = 'User: ' + user_hand + '\nComp: ' + comp_hand + '\n\nUser Wins\n' + random_win_statement() + '\n\nUser Score: ' + str(user_score) + '\nComp Score: ' + str(comp_score)
     else:
-        print('comp wins')
         comp_score += 1
         results_statement = 'User: ' + user_hand + '\nComp: ' + comp_hand + '\n\nComp Wins\n' + random_lose_statement() + '\n\nUser Score: ' + str(user_score) + '\nComp Score: ' + str(comp_score)
     return results_statement
@@ -200,9 +197,9 @@ def EasyMode():
     model = keras.models.load_model("BCS.h5")
 
     CLASS_MAP =  {
-        0: "cow",
+        0: "bird",
         1: "snake",
-        2: "bird",
+        2: "cow",
         3: "none"
     }
 
@@ -345,9 +342,9 @@ def MediumMode():
     model = keras.models.load_model("BCS.h5")
 
     CLASS_MAP =  {
-        0: "cow",
+        0: "bird",
         1: "snake",
-        2: "bird",
+        2: "cow",
         3: "none"
     }
 
@@ -487,9 +484,9 @@ def HardMode():
     print('now in ' + mode + ' mode')
 
     CLASS_MAP =  {
-        0: "cow",
-        1: "snake",
-        2: "bird",
+        0: "bird", #rock
+        1: "snake", #paper
+        2: "cow", #scissors
         3: "none"
     }
 
