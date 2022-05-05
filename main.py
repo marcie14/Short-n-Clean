@@ -1,10 +1,9 @@
 #M E 369P - Team 4 - Short n' Clean 
 #Allen Hewson, Brenda Miltos, Marcie Legarde, Pranay Srivastava
 #GUI File:
-#    This file creates the GUI for the game of Cow Snake Bird
+#    This file creates the GUI for the game of cow snake bird
 #    Much of this file was extrapolated from https://pythonistaplanet.com/rock-paper-scissors-game-using-python-tkinter/
 #    Changes made for this project: 
-#        -Cow Snake Bird instead of Rock Paper Scissors
 #        -Winner/Loser Comments
 #        -Easy (random) and Hard (cheat) mode
 #        -Not-So-Random computer hand selection for Hard Mode
@@ -650,6 +649,19 @@ def Hard():
 
 cap = None 
 root = Tk()
+root.geometry('1000x600')
+
+# Add image file
+bg = PhotoImage(file = "BCS_Background.png")
+  
+# Show image using label
+label1 = Label( root, image = bg)
+label1.place(x = 0, y = 0)
+
+
+label2 = Label( root, text = "LETS PLAY!", font = 30)
+label2.grid(column = 1, row = 2, padx = 5, pady = 5)
+
 
 btnEasy = Button(root, text="Easy", width=45, command=Easy)
 btnEasy.grid(column=0, row=0, padx=5, pady=5)
@@ -659,6 +671,7 @@ btnMedium.grid(column=1, row=0, padx=5, pady=5)
 
 btnHard = Button(root, text="Hard", width=45, command=Hard)
 btnHard.grid(column=2, row=0, padx=5, pady=5)
+
 
 lblVideo = Label(root)
 lblVideo.grid(column=0, row=1, columnspan=2)
